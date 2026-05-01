@@ -1,13 +1,13 @@
-import Hero from "./Components/Hero"
-import Nav from "./Components/Nav"
-
-
+import HeroSection from "./components/HeroSection"
+import Nav from "./components/Nav"
+import Trending from "./components/Trending"
 
 function App() {
   return (
     <div id="App">
-     <Nav/>
-     <Hero/>
+      <Nav/>
+      <HeroSection/>
+      <Trending/>
     </div>
   )
 }
