@@ -10,7 +10,8 @@ body {
   height: 100%;
   width: 100%;
 }
-#App{
+#App {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,21 +24,30 @@ body {
   --primTextColor: black;
 }
 .Nav {
-  height: 300px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 50px;
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   flex-shrink: 0;
+  background: white;
 }
-
+.logo {
+  height: 50px;
+}
 .NavChild1 {
-  height: 15%;
+  height: 30%;
   display: flex;
   justify-content: end;
   align-items: center;
   background-color: var(--secondBgColor);
 }
 .logInContainer {
+  flex-shrink: 0;
   width: 12%;
   height: 100%;
   display: flex;
@@ -77,6 +87,7 @@ body {
 }
 
 .icons {
+  position: relative;
   width: 20%;
   height: 100%;
   display: flex;
@@ -84,8 +95,13 @@ body {
   justify-content: space-evenly;
   margin-right: 2%;
 }
+.block {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
 .searchDiv {
-  height: 50%;
+  height: 10%;
   border-radius: 50px;
   background-color: var(--secondBgColor);
   display: flex;
@@ -129,6 +145,10 @@ body {
 }
 .NavChild4 > span {
   margin: 0% 1%;
+  transition: all ease-in-out 4s;
+}
+.sections > span:hover {
+  text-decoration: underline;
 }
 
 .HeroSection {
@@ -151,20 +171,21 @@ body {
   position: absolute;
   flex-direction: column;
   display: flex;
-  height: 50%;
+  height: 30%;
   width: 80%;
-  justify-content:center;
+  justify-content: space-evenly;
   align-items: center;
   color: var(--primBgColor);
-  margin-bottom: 5%;
+  /* margin-bottom: 5%; */
 }
 .heroText > h1 {
   font-size: 5rem !important;
 }
- .shopButton {
+.shopButton {
   width: 80px;
   height: 40px;
-  
+  margin-bottom: 100px;
+
   border-radius: 50px;
   border: none;
   font-size: medium;
@@ -173,26 +194,44 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; 
+  flex-direction: column;
   height: 100vh;
   width: 90%;
   /* background-color: green; */
 }
-.trendingHeading{
+.trendingHeading {
   width: 100%;
   height: 10%;
   display: flex;
   align-items: end;
 }
-.trendingHeading > h2{
+.trendingHeading > h2 {
   font-weight: 400;
 }
 .card-cantainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 32%);
+  grid-template-rows: repeat(auto-fill, 90%);
   align-items: center;
   justify-content: space-between;
   height: 80%;
   width: 100%;
+}
+@media (max-width: 600px) {
+  .card-cantainer {
+    grid-template-columns: repeat(auto-fill, 100%);
+    grid-template-rows: repeat(auto-fill, 90vh);
+  }
+  .sections {
+    height: 100%;
+    width: 50%;
+    font-size: xx-small;
+    transform: translate(-20%);
+  }
+  .cards {
+    height: 100vh;
+    width: 100%;
+    }
 }
 .cards {
   position: relative;
@@ -200,25 +239,25 @@ body {
   align-items: end;
   justify-content: center;
   height: 90%;
-  width: 32%;
+  width: 100%;
   /* background-color: #ff0000; */
   transition: all ease-in-out 0.4s;
 }
-.cards:hover{
-  scale:1.1;
+.cards:hover {
+  scale: 1.1;
 }
 .cards > img {
   height: 100%;
   object-fit: cover !important;
-  object-position:top;
+  object-position: top;
   width: 100%;
   border-radius: 10px;
 }
 
-.card:last-child{
-  background: #E2E4DF;
+.card:last-child {
+  background: #e2e4df;
 }
-.cardDetails{
+.cardDetails {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -229,4 +268,105 @@ body {
   margin-bottom: 8%;
   /* background-color: red; */
   color: white;
+}
+
+.Search {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: start;
+  top: 10%;
+  z-index: 10;
+  position: absolute;
+  max-height: 60vh;
+  width: 100vw;
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+  transition: all ease-in-out 2s;
+}
+.Search > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+.Search input {
+  width: 92%;
+  height: 60px;
+  border-radius: 50px;
+  font-size: x-large;
+  padding: 0px 20px;
+  background-color: var(--secondBgColor);
+  border: none;
+}
+.Search input:focus {
+  outline: none;
+  border: none;
+}
+.Search button {
+  flex-shrink: 0;
+  height: 5%;
+  aspect-ratio: 1/1;
+  width: 5%;
+  border: none;
+  border-radius: 50%;
+  font-size: smaller;
+}
+#SearchResult {
+  display: grid;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, 200px); /*h*/
+  grid-template-rows: repeat(auto-fill, 200px);
+  gap: 10px;
+  overflow-y: scroll;
+  /* background-color: #46bc13; */
+}
+#SearchResult::-webkit-scrollbar {
+  display: none;
+}
+
+.SearchCards {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+  object-position: center;
+  color: #e2e4df;
+  z-index: 20;
+  border: 2px solid red;
+}
+.cardImg {
+  aspect-ratio: 1/1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  /* z-index: 1; */
+  border-radius: 10px;
+}
+.SearchCards h5 {
+  position: absolute;
+  z-index: 2;
+  bottom: 10%;
+  left: 10px;
+}
+.SearchCards p {
+  z-index: 10;
+  color: black;
+}
+.favButton{
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  right: 10px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: none;
+  background-color: red;
 }
