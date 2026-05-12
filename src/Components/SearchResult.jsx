@@ -4,6 +4,8 @@ import SearchCards from './SearchCards'
 function SearchResult() {
 
   const [data, setData] = useState([])
+  const [favorites, setFavorites] = useState([])
+
   useEffect(() => {
     async function fetchDataFun() {
       const url = await fetch("https://fakestoreapi.com/products/")
@@ -24,7 +26,7 @@ function SearchResult() {
         return <SearchCards
           key={e.id}
           img={e.image}
-          name={e.category.description}
+          name={e.title}
 
         />
       })}

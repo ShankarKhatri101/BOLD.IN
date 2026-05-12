@@ -11,6 +11,7 @@ body {
   width: 100%;
 }
 #App {
+
   position: relative;
   display: flex;
   align-items: center;
@@ -27,7 +28,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1;
-  height: 50px;
+  height: 60px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -66,7 +67,7 @@ body {
 }
 
 .NavChild2 {
-  height: 30%;
+  height: 50%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -101,7 +102,7 @@ body {
   width: 100%;
 }
 .searchDiv {
-  height: 10%;
+  height: 100%;
   border-radius: 50px;
   background-color: var(--secondBgColor);
   display: flex;
@@ -178,13 +179,13 @@ body {
   color: var(--primBgColor);
   /* margin-bottom: 5%; */
 }
-.heroText > h1 {
-  font-size: 5rem !important;
+.heroText > h2 {
+  font-size: 2rem !important;
 }
 .shopButton {
   width: 80px;
   height: 40px;
-  margin-bottom: 100px;
+  /* margin-bottom: 50px; */
 
   border-radius: 50px;
   border: none;
@@ -193,7 +194,7 @@ body {
 .Trending {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   height: 100vh;
   width: 90%;
@@ -202,11 +203,12 @@ body {
 .trendingHeading {
   width: 100%;
   height: 10%;
+  margin-top: 30px;
   display: flex;
   align-items: end;
 }
 .trendingHeading > h2 {
-  font-weight: 400;
+  font-weight: 500;
 }
 .card-cantainer {
   display: grid;
@@ -231,7 +233,7 @@ body {
   .cards {
     height: 100vh;
     width: 100%;
-    }
+  }
 }
 .cards {
   position: relative;
@@ -239,6 +241,8 @@ body {
   align-items: end;
   justify-content: center;
   height: 90%;
+  max-height: 700px;
+  max-width: 450px;
   width: 100%;
   /* background-color: #ff0000; */
   transition: all ease-in-out 0.4s;
@@ -337,7 +341,7 @@ body {
   object-position: center;
   color: #e2e4df;
   z-index: 20;
-  border: 2px solid red;
+  border: 2px solid rgb(212, 208, 208);
 }
 .cardImg {
   aspect-ratio: 1/1;
@@ -359,14 +363,29 @@ body {
   z-index: 10;
   color: black;
 }
-.favButton{
+.favButton {
+ 
   position: absolute;
   z-index: 10;
-  top: 10px;
+  bottom: 10%;
   right: 10px;
-  height: 100px;
+  min-height: 20px;
   width: 100px;
+  min-width: 20px;
   border-radius: 50%;
   border: none;
-  background-color: red;
+  background-color: transparent;
+  /* background-color: rgb(255, 13, 0); */
+  font-size:xx-large;
+}
+.SportsSection {
+  display: flex;
+  /* background-color: red; */
+  height: 100vh;
+  width: 100%;
+}
+ .Card { 
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }

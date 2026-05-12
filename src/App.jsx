@@ -1,5 +1,6 @@
 import HeroSection from "./components/HeroSection"
 import Nav from "./components/Nav"
+import SportsSection from "./components/SportsSection"
 import Trending from "./components/Trending"
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Nav/>
       <HeroSection/>
       <Trending/>
+      <SportsSection/>  
     </div>
   )
 }
