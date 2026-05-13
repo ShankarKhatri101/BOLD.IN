@@ -1,6 +1,6 @@
 import React from 'react'
 
-const cartArry = [];
+export const cartArry = [];
 function SearchCards({ img, name, address }) {
     function addToFav(e) {
         console.log("Added to fav");

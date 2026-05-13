@@ -1,7 +1,7 @@
-import HeroSection from "./components/HeroSection"
-import Nav from "./components/Nav"
-import SportsSection from "./components/SportsSection"
-import Trending from "./components/Trending"
+import HeroSection from "./components/sections/HeroSection"
+import Nav from "./components/NavBar/Nav"
+import SportsSection from "./components/sections/SportsSection"
+import Trending from "./components/sections/Trending"
 
 function App() {
   return (

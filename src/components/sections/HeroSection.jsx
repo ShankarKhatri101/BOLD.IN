@@ -1,6 +1,5 @@
 import React from 'react';
-import heroImage from '../assets/hero20.png'; 
-
+import heroImage from '../../assets/hero20.png';
 function HeroSection() {
     return (
         <div className="HeroSection">
