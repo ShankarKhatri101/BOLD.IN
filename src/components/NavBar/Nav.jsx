@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import { useState ,useContext } from 'react'
 import logo from "../../assets/glasses-svgrepo-com.svg"
 import Search from '../NavBar/Search'
 import Cart from '../Cart/Cart'
 import CartCount from '../Cart/CartCount'
-import { cartArry } from './SearchCards'
-
+import { GlobalStore } from '../context/ContextProvider'
 function Nav() {
     const [turn, setTurn] = useState(false)
     const [turncart, setTurncart] = useState(false)
+    const cartVar = useContext(GlobalStore)
 
     return (
         <div className="Nav">
@@ -30,7 +30,7 @@ function Nav() {
                     <div>
                         <svg onClick={() => { setTurncart(true) }} aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="24px" height="24px" fill="none"><path stroke="#111111" d="M8.25 8.25V6a2.25 2.25 0 012.25-2.25h3a2.25 2.25 0 110 4.5H3.75v8.25a3.75 3.75 0 003.75 3.75h9a3.75 3.75 0 003.75-3.75V8.25H17.5"></path>
                         </svg>
-                       {cartArry.length>0&& <CartCount cartTotal={cartArry} />}
+                        {cartVar.cartData.length> 0 && <CartCount />}
 
 
                     </div>
@@ -39,7 +39,7 @@ function Nav() {
 
 
             </div>
-            {turncart && <Cart setTurncart={setTurncart} cartTotal={cartArry} />}
+            {turncart && <Cart setTurncart={setTurncart}  />}
         </div>
     )
 }

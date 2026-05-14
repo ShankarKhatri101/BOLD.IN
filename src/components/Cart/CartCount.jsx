@@ -1,11 +1,15 @@
-import {useState} from 'react'
+import { useContext, useState } from 'react'
+import { GlobalStore } from '../context/ContextProvider'
+import ContextProvider from '../context/ContextProvider'
 
-function CartCount ({ cartTotal}){
+
+function CartCount({ cartTotal }) {
     const [totalItems, setTotalItems] = useState(0)
-
+    const cartVar = useContext(GlobalStore)
+    console.log("test is =", cartVar.cartData.length,cartVar.cartData )
     return (
         <div className="CartCount">
-            {cartTotal.length}
+                {cartVar.cartData.length }
         </div>
     )
 }

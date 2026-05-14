@@ -1,11 +1,13 @@
-import React from 'react'
+import {useContext} from 'react'
+import ContextProvider ,{GlobalStore} from '../context/ContextProvider'
 
-export const cartArry = [];
 function SearchCards({ img, name, address }) {
+    const globalObjContainer = useContext(GlobalStore)
     function addToFav(e) {
         console.log("Added to fav");
-        cartArry.push({ img, name, address });
-        console.log(cartArry)
+        globalObjContainer.setCartData([...globalObjContainer.cartData,{ img, name }]);
+        // setCartData([...cartData, { img, name }]);
+        
     }
     return (
         <div className="SearchCards">

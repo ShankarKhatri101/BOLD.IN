@@ -3,6 +3,7 @@ import Nav from "./components/NavBar/Nav"
 import SportsSection from "./components/sections/SportsSection"
 import Trending from "./components/sections/Trending"
 
+
 function App() {
   return (
     <div id="App">
